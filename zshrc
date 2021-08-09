@@ -102,33 +102,19 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #neofetch
-alias ls=exa
+#alias ls=exa
 alias k=kubectl
+alias vi=vim
 #alias cat=bat
 eval "$(starship init zsh)"
 export STARSHIP_CONFIG=~/.config/starship.toml
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=243,bg=237,underline"
-PROG=cert-csi
-_CLI_ZSH_AUTOCOMPLETE_HACK=1
-source  ~/.cert-zsh-autocomplete
-#alias ls=exa
-PROG=cert-csi
-_CLI_ZSH_AUTOCOMPLETE_HACK=1
-source  ~/.cert-zsh-autocomplete
-
-PROG=cert-csi
-_CLI_ZSH_AUTOCOMPLETE_HACK=1
-source  ~/.cert-zsh-autocomplete
 function wat() {
   WATCH_COMMAND='zsh -ci' /usr/bin/watch "$@"
 }
-PROG=cert-csi
-_CLI_ZSH_AUTOCOMPLETE_HACK=1
-source  ~/.cert-zsh-autocomplete
-
 
 [[ -s "/home/max/.gvm/scripts/gvm" ]] && source "/home/max/.gvm/scripts/gvm"
-gvm use go1.16.2
+#gvm use go1.16.2
 
 # Created by `pipx` on 2021-03-29 07:41:09
 export PATH="$PATH:/home/max/.local/bin"

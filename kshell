@@ -1,1 +1,7 @@
-cat $KUBECONFIG | grep -m 1 "server:.\+$" | cut -f 6 -d " " || echo $?
+#/usr/bin/bash
+set -o pipefail
+
+if [[ -z $KUBECONFIG ]]; then
+  exit 222
+fi
+cat $KUBECONFIG | grep -m 1 "server:.\+$" | cut -f 6 -d " " 

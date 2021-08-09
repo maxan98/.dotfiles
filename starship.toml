@@ -1,5 +1,69 @@
 # ~/.config/starship.toml
 
+format = """
+${custom.tztime}\
+${custom.os-icon}\
+$username\
+    $hostname\
+    $shlvl\
+    $kubernetes\
+    $directory\
+    $vcsh\
+    $git_branch\
+    $git_commit\
+    $git_state\
+    $git_metrics\
+    $git_status\
+    $hg_branch\
+    $docker_context\
+    $package\
+    $cmake\
+    $dart\
+    $deno\
+    $dotnet\
+    $elixir\
+    $elm\
+    $erlang\
+    $golang\
+    $helm\
+    $java\
+    $julia\
+    $kotlin\
+    $nim\
+    $nodejs\
+    $ocaml\
+    $perl\
+    $php\
+    $purescript\
+    $python\
+    $red\
+    $ruby\
+    $rust\
+    $scala\
+    $swift\
+    $terraform\
+    $vlang\
+    $vagrant\
+    $zig\
+    $nix_shell\
+    $conda\
+    $memory_usage\
+    $aws\
+    $gcloud\
+    $openstack\
+    $env_var\
+    $crystal\
+    $custom\
+    $cmd_duration\
+    $line_break\
+    $lua\
+    $jobs\
+    $battery\
+    $time\
+    $status\
+    $shell\
+    $character"""
+
 [golang]
 symbol = " "
 
@@ -70,9 +134,8 @@ disabled = true
 
 
 [kubernetes]
-format = """on [⛵ `kshell`](dimmed green) 
-"""
-disabled = false
+format = "on ${custom.tztime}"
+disabled =true
 
 [status]
 style = "bg:blue"
@@ -80,7 +143,11 @@ symbol = "💣 "
 format = '[\[$symbol$status\]]($style) '
 disabled = false
 
-#[custom.k8s]
-#command = "kshell"
-#format = "output[$output]($style)"
-#shell = "zsh"
+[custom.tztime]
+command = '/usr/local/bin/kshell'
+when = "/usr/local/bin/kshell"
+format = """[on ⛵ $symbol($output)](green)
+[BTW I USE ARCH](bright-green)
+"""
+shell = ["bash", "--noprofile", "--norc"]
+
